@@ -1,19 +1,26 @@
 import { Box, styled } from "@mui/material";
-import React from "react";
+import React, { useRef } from "react";
 import { Outlet } from "react-router-dom";
+import { Scrollbar } from "smooth-scrollbar-react";
+import type { Scrollbar as BaseScrollbar } from "smooth-scrollbar/scrollbar";
 
 const CommonLayout = () => {
+  const scrollbar = useRef<BaseScrollbar | null>(null);
+
   return (
-    <PageLayout>
-      <Outlet />
-    </PageLayout>
+    <Scrollbar>
+      <PageLayout>
+        <Outlet />
+      </PageLayout>
+    </Scrollbar>
   );
 };
 
 const PageLayout = styled(Box)({
   position: "relative",
   width: "100vw",
-  minHeight: "100vh",
+  fontFamily: "Pretendard",
+  overflowX: "hidden",
 });
 
 export default CommonLayout;

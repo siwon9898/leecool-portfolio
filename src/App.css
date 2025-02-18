@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pretendard" !important;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* font  */
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 100;
+  src: url("./assets/fonts/Pretendard/Pretendard-Thin.woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 300;
+  src: url("./assets/fonts/Pretendard/Pretendard-Light.woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 400;
+  src: url("./assets/fonts/Pretendard/Pretendard-Regular.woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 500;
+  src: url("./assets/fonts/Pretendard/Pretendard-Medium.woff");
+}
+
+@font-face {
+  font-family: "Pretendard";
+  font-weight: 600;
+  src: url("./assets/fonts/Pretendard/Pretendard-Bold.woff");
+}
+
+/* scroll */
+
+.scrollbar-track-x,
+.scrollbar-thumb-x {
+  height: 5px !important;
+}
+
+.scrollbar-track-y,
+.scrollbar-thumb-y {
+  width: 5px !important;
+}
+
+.scroll-content:hover ~ .scrollbar-track {
+  opacity: 1;
+}
+
+.custom-class {
+  background: #fff;
+}
