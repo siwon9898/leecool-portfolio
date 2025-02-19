@@ -1,4 +1,4 @@
-import { Box, styled, Typography } from "@mui/material";
+import { Box, Button, styled, Typography } from "@mui/material";
 import ProfileImg from "../assets/image/img-profile.png";
 import React from "react";
 
@@ -6,7 +6,7 @@ const LandingPage = () => {
   return (
     <LandingContainer>
       <TypoContainer>
-        <Box mb={3}>
+        <Box mb={4}>
           <Typography variant="h1">안녕하세요,</Typography>
           <Typography variant="h1">Web Front-end 개발자</Typography>
           <Typography variant="h1">이시원 입니다.</Typography>
@@ -24,6 +24,7 @@ const LandingPage = () => {
             지속 가능한 UX라는 공동 가치를 위해 팀과 함께 성장하며 기여하고자
             합니다.
           </Typography>
+          <ResumeButton>Resume</ResumeButton>
         </Box>
       </TypoContainer>
       <ImageContainer>
@@ -53,7 +54,8 @@ const TypoContainer = styled(Box)({
     fontWeight: 700,
   },
   "& p": {
-    color: "#333",
+    color: "#777",
+    fontSize: "18px",
   },
 });
 
@@ -64,6 +66,17 @@ const ImageContainer = styled(Box)({
   transform: "translateY(-40%)",
   "& img": {
     width: "360px",
+  },
+});
+
+const ResumeButton = styled(Button)({
+  marginTop: "30px",
+  background: "#000",
+  color: "#fff",
+  borderRadius: "100px",
+  padding: "10px 40px",
+  "&:hover": {
+    outline: "none",
   },
 });
 export default LandingPage;

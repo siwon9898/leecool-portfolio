@@ -9,6 +9,8 @@ import InfoPage from "./pages/InfoPage";
 import type { Scrollbar as BaseScrollbar } from "smooth-scrollbar/scrollbar";
 import { Scrollbar } from "smooth-scrollbar-react";
 import { OverscrollEffect } from "smooth-scrollbar/plugins/overscroll";
+import CareerPage from "./pages/CareerPage";
+import ProjectPage from "./pages/ProjectPage";
 
 function App() {
   const scrollbar = useRef<BaseScrollbar | null>(null);
@@ -22,6 +24,8 @@ function App() {
         <PageLayout>
           <LandingPage />
           <InfoPage />
+          <CareerPage />
+          <ProjectPage />
         </PageLayout>
       </Scrollbar>
     </>
