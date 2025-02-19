@@ -12,15 +12,25 @@ import LinkedInIcon from "../assets/image/ic-linkedin.png";
 import GithubIcon from "../assets/image/ic-github.png";
 import TistoryIcon from "../assets/image/ic-tistory.png";
 import React from "react";
+import { motion } from "motion/react";
+import AnimatedCharacters from "../components/textAnimations/RevealWavyText";
 
 const LandingPage = () => {
+  const container = {
+    visible: {
+      transition: {
+        staggerChildren: 0.025,
+      },
+    },
+  };
+
   return (
     <LandingContainer>
-      <TypoContainer>
+      <TypoContainer variants={container}>
         <Box mb={6}>
-          <Typography variant="h3">안녕하세요,</Typography>
-          <Typography variant="h1">Front-end Developer</Typography>
-          <Typography variant="h3">이시원 입니다.</Typography>
+          <AnimatedCharacters text="안녕하세요" />
+          <AnimatedCharacters text="Front-end Developer" />
+          <AnimatedCharacters text="이시원 입니다." />
         </Box>
         <Box>
           <Typography>
@@ -79,6 +89,32 @@ const LandingPage = () => {
   );
 };
 
+const transition = {
+  duration: 1,
+  ease: [0.18, 0.12, 0.39, 0.98],
+};
+
+const textReveal = {
+  initial: {
+    y: "200%",
+    opacity: 0,
+  },
+  animate: {
+    y: "0%",
+    opacity: 1,
+  },
+};
+
+const RegularText = styled(motion.h4)({
+  fontSize: "64px",
+  fontWeight: 500,
+});
+
+const BoldText = styled(motion.h1)({
+  fontSize: "64px",
+  fontWeight: 500,
+});
+
 const LandingContainer = styled(Box)({
   width: "100%",
   height: "calc(100vh - 30px)",
@@ -89,7 +125,7 @@ const LandingContainer = styled(Box)({
   display: "flex",
 });
 
-const TypoContainer = styled(Box)({
+const TypoContainer = styled(motion.div)({
   position: "absolute",
   left: "10%",
   top: "50%",
