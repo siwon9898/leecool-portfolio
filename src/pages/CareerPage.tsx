@@ -34,7 +34,7 @@ const CareerContainer = styled(Box)({
   display: "flex",
   padding: "180px 10% 80px 10%",
   flexDirection: "column",
-  gap: "60px",
+  gap: "120px",
   justifyContent: "center",
   "& > div": {
     display: "flex",

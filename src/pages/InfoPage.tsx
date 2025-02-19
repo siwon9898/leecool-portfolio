@@ -16,6 +16,21 @@ const InfoPage = () => {
 
   return (
     <InfoContainer>
+      <SubIntroBox>
+        <Typography variant="h2">Strength in Simplicity</Typography>
+        <Typography>
+          React, Typescript 기반의 4년차 Front-end 개발자 입니다.
+          <br />
+          기업의 인사이트 도출을 위한 빅데이터 통합 플랫폼 및 어드민 서비스 개발
+          등을 해왔습니다.
+          <br />
+          사용 매뉴얼이 필요 없는 서비스를 목표로, 심플함이 곧 강력함 이라는
+          철학을 바탕으로 개발에 임합니다.
+          <br />
+          지속 가능한 UX라는 공동 가치를 위해 팀과 함께 성장하며 기여하고자
+          합니다.
+        </Typography>
+      </SubIntroBox>
       <Box>
         <InfoTypo>SKILLS.</InfoTypo>
         <AlignCenter mb={2}>
@@ -64,7 +79,7 @@ const InfoPage = () => {
 };
 const InfoContainer = styled(Box)({
   width: "100%",
-  height: "calc(100vh + 30px)",
+  minHeight: "calc(100vh + 30px)",
   position: "relative",
   borderRadius: "0 0 100px 100px",
   overflowX: "hidden",
@@ -75,6 +90,22 @@ const InfoContainer = styled(Box)({
   justifyContent: "center",
   background: "#fff",
   zIndex: 10,
+});
+
+const SubIntroBox = styled(Box)({
+  textAlign: "center",
+  width: "100%",
+  padding: "60px 0 120px 0",
+
+  "& > h2": {
+    fontWeight: 600,
+    marginBottom: "20px",
+    fontFamily: "Bacasime Antique !important",
+  },
+  "& > p": {
+    fontSize: "20px",
+    color: "#555",
+  },
 });
 
 const InfoTypo = styled(Typography)({

@@ -20,6 +20,7 @@ function App() {
       <Scrollbar
         ref={scrollbar}
         plugins={{ overscroll: { effect: OverscrollEffect.GLOW } } as const}
+        damping={0.05}
       >
         <PageLayout>
           <LandingPage />

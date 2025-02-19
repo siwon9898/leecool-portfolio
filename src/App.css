@@ -40,6 +40,12 @@ body {
   src: url("./assets/fonts/Pretendard/Pretendard-Bold.woff");
 }
 
+@font-face {
+  font-family: "Bacasime Antique";
+  font-weight: 600;
+  src: url("./assets/fonts/BacasimeAntique-Regular.woff");
+}
+
 /* scroll */
 
 .scrollbar-track-x,

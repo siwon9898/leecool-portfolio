@@ -1,18 +1,45 @@
-import { Box, Button, styled, Typography } from "@mui/material";
+import {
+  Box,
+  Button,
+  colors,
+  IconButton,
+  styled,
+  Typography,
+} from "@mui/material";
 import ProfileImg from "../assets/image/img-profile.png";
+import DownloadIcon from "../assets/image/ic-download.png";
+import LinkedInIcon from "../assets/image/ic-linkedin.png";
+import GithubIcon from "../assets/image/ic-github.png";
+import TistoryIcon from "../assets/image/ic-tistory.png";
 import React from "react";
 
 const LandingPage = () => {
   return (
     <LandingContainer>
       <TypoContainer>
-        <Box mb={4}>
-          <Typography variant="h1">안녕하세요,</Typography>
-          <Typography variant="h1">Web Front-end 개발자</Typography>
-          <Typography variant="h1">이시원 입니다.</Typography>
+        <Box mb={6}>
+          <Typography variant="h3">안녕하세요,</Typography>
+          <Typography variant="h1">Front-end Developer</Typography>
+          <Typography variant="h3">이시원 입니다.</Typography>
         </Box>
         <Box>
           <Typography>
+            <Box component={"span"}>Email.</Box>
+            siwon9898@gmail.com
+          </Typography>
+          <Typography>
+            <Box component={"span"}>Phone.</Box>
+            +82 01051532369
+          </Typography>
+          <Typography>
+            <Box component={"span"}>Birth.</Box>
+            1998.12.06
+          </Typography>
+          <Typography>
+            <Box component={"span"}>Residence.</Box>
+            Seoul, South Korea
+          </Typography>
+          {/* <Typography>
             React, Typescript 기반의 4년차 Frontend 개발자 입니다.
             <br />
             기업의 인사이트 도출을 위한 빅데이터 통합 플랫폼 및 어드민 서비스
@@ -23,8 +50,26 @@ const LandingPage = () => {
             <br />
             지속 가능한 UX라는 공동 가치를 위해 팀과 함께 성장하며 기여하고자
             합니다.
-          </Typography>
-          <ResumeButton>Resume</ResumeButton>
+          </Typography> */}
+          <LinkBox>
+            <ResumeButton>
+              Resume
+              <img src={DownloadIcon} alt="download icon" />
+            </ResumeButton>
+            <IconButton>
+              <img src={LinkedInIcon} alt="linkedin icon" />
+            </IconButton>
+            <IconButton>
+              <img src={GithubIcon} alt="linkedin icon" />
+            </IconButton>
+            <IconButton sx={{ transform: "translateX(-1px)" }}>
+              <img
+                src={TistoryIcon}
+                alt="linkedin icon"
+                style={{ width: "42px" }}
+              />
+            </IconButton>
+          </LinkBox>
         </Box>
       </TypoContainer>
       <ImageContainer>
@@ -47,36 +92,62 @@ const LandingContainer = styled(Box)({
 const TypoContainer = styled(Box)({
   position: "absolute",
   left: "10%",
-  top: "40%",
-  transform: "translateY(-40%)",
+  top: "50%",
+  transform: "translateY(-50%)",
+  "& h3": {
+    fontSize: "64px",
+    fontWeight: 500,
+  },
   "& h1": {
     fontSize: "64px",
     fontWeight: 700,
   },
   "& p": {
-    color: "#777",
-    fontSize: "18px",
+    color: "#333",
+    fontSize: "20px",
+    "& > span": {
+      color: "#000",
+      fontWeight: 700,
+      marginRight: "10px",
+    },
   },
 });
 
 const ImageContainer = styled(Box)({
   position: "absolute",
   right: "10%",
-  top: "40%",
-  transform: "translateY(-40%)",
+  top: "45%",
+  transform: "translateY(-45%)",
   "& img": {
     width: "360px",
   },
 });
 
 const ResumeButton = styled(Button)({
-  marginTop: "30px",
   background: "#000",
   color: "#fff",
   borderRadius: "100px",
-  padding: "10px 40px",
+  padding: "10px 30px 10px 40px",
+  letterSpacing: "1.5",
+  textTransform: "capitalize",
+  fontSize: "18px",
+  fontWeight: 700,
+  marginRight: "20px",
   "&:hover": {
     outline: "none",
+  },
+  "& > img": {
+    marginLeft: "4px",
+  },
+});
+
+const LinkBox = styled(Box)({
+  display: "flex",
+  alignItems: "center",
+  marginTop: "30px",
+  gap: "10px",
+  "& .MuiIconButton-root > img": {
+    width: "36px",
   },
 });
 export default LandingPage;
