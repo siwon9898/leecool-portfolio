@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 import CommonLayout from "./components/layouts/CommonLayout";
 import IndexPage from "./pages/IndexPage";
@@ -11,14 +11,31 @@ import { Scrollbar } from "smooth-scrollbar-react";
 import { OverscrollEffect } from "smooth-scrollbar/plugins/overscroll";
 import CareerPage from "./pages/CareerPage";
 import ProjectPage from "./pages/ProjectPage";
+import { useMotionValue, useMotionValueEvent, useScroll } from "motion/react";
 
 function App() {
-  const scrollbar = useRef<BaseScrollbar | null>(null);
+  const scrollbarRef = useRef<BaseScrollbar | null>(null);
+  const [scrollY, setScrollY] = useState<number>();
+  const scrollMotion = useMotionValue(0); // ✅ Motion Value 생성
+
+  useEffect(() => {
+    const scrollbar = scrollbarRef.current;
+
+    if (!scrollbar) return;
+
+    scrollbar?.addListener((status) => {
+      console.log("status", status);
+    });
+
+    if (scrollbar.offset.y !== scrollY) {
+      setScrollY(scrollbar.offset.y);
+    }
+  }, [scrollbarRef.current?.offset.y]);
 
   return (
     <>
       <Scrollbar
-        ref={scrollbar}
+        ref={scrollbarRef}
         plugins={{ overscroll: { effect: OverscrollEffect.GLOW } } as const}
         damping={0.05}
       >
@@ -38,7 +55,6 @@ const PageLayout = styled(Box)({
   width: "100vw",
   height: "100vh",
   fontFamily: "Pretendard",
-  overflowX: "hidden",
   display: "flex",
 });
 

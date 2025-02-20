@@ -2,10 +2,16 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Typography } from "@mui/material";
 
-const AnimatedCharacters = ({ text }: { text: string }) => {
+const AnimatedCharacters = ({
+  text,
+  isbold,
+}: {
+  text: string;
+  isbold?: boolean;
+}) => {
   // 애니메이션 설정
   const item = {
-    hidden: { y: "200%", opacity: 0 },
+    hidden: { y: "100%", opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
@@ -14,10 +20,20 @@ const AnimatedCharacters = ({ text }: { text: string }) => {
   };
 
   // 텍스트를 한 글자씩 나누기
-  const letters = text.split("");
+  const letters = text
+    .split("")
+    .map((char) => (char === " " ? "\u00A0" : char));
 
   return (
-    <Typography variant="h1" component="span" sx={{ display: "block" }}>
+    <Typography
+      variant="h1"
+      component="span"
+      sx={{
+        display: "block",
+        fontWeight: isbold ? 700 : 600,
+        fontSize: "64px",
+      }}
+    >
       {letters.map((char, index) => (
         <span
           key={index}
@@ -27,7 +43,10 @@ const AnimatedCharacters = ({ text }: { text: string }) => {
             style={{ display: "inline-block" }}
             variants={item}
             initial="hidden"
-            animate="visible"
+            whileInView="visible"
+            viewport={{
+              once: false,
+            }}
           >
             {char}
           </motion.span>
@@ -36,5 +55,4 @@ const AnimatedCharacters = ({ text }: { text: string }) => {
     </Typography>
   );
 };
-
 export default AnimatedCharacters;

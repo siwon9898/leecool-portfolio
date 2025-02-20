@@ -22,7 +22,7 @@ const ProjectContainer = styled(Box)({
   // height: "calc(100vh + 30px)",
   position: "relative",
   borderRadius: "0 0 100px 100px",
-  overflowX: "hidden",
+  // overflowX: "hidden",
   display: "flex",
   padding: "100px 10%",
   flexDirection: "column",

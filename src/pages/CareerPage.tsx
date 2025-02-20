@@ -30,7 +30,7 @@ const CareerContainer = styled(Box)({
   background: "#FAF7ED",
   position: "relative",
   borderRadius: "0 0 60px 60px",
-  overflowX: "hidden",
+  // overflowX: "hidden",
   display: "flex",
   padding: "180px 10% 80px 10%",
   flexDirection: "column",

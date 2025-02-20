@@ -20,7 +20,7 @@ const PageLayout = styled(Box)({
   position: "relative",
   width: "100vw",
   fontFamily: "Pretendard",
-  overflowX: "hidden",
+  // overflowX: "hidden",
 });
 
 export default CommonLayout;
