@@ -14,6 +14,12 @@ const BadgeBox = styled(Box)((props: { isdev?: boolean }) => {
     fontSize: "20px",
     color: "#333",
     whiteSpace: "nowrap",
+    display: "inline-block",
+    marginRight: "10px",
+    marginBottom: "10px",
+    "@media (max-width : 1080px)": {
+      fontSize: "16px",
+    },
   };
 });
 

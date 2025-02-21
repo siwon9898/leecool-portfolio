@@ -125,14 +125,21 @@ const TypoContainer = styled(motion.div)({
   "& h3": {
     fontSize: "64px",
     fontWeight: 500,
+    "@media (max-width : 1200px)": {
+      fontSize: "24px",
+    },
   },
   "& h1": {
     fontSize: "64px",
     fontWeight: 700,
+    "@media (max-width : 1200px)": {
+      fontSize: "24px",
+    },
   },
   "& p": {
     color: "#333",
     fontSize: "20px",
+
     "& > span": {
       color: "#000",
       fontWeight: 700,

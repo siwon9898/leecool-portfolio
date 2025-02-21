@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Typography } from "@mui/material";
+import { styled, Typography } from "@mui/material";
 
 const AnimatedCharacters = ({
   text,
@@ -31,7 +31,12 @@ const AnimatedCharacters = ({
       sx={{
         display: "block",
         fontWeight: isbold ? 700 : 600,
-        fontSize: "64px",
+        fontSize: {
+          xs: "32px",
+          sm: "42px",
+          md: "48px",
+          lg: "64px",
+        },
       }}
     >
       {letters.map((char, index) => (
@@ -55,4 +60,13 @@ const AnimatedCharacters = ({
     </Typography>
   );
 };
+
+const AnimateTypo = styled(Typography)((props: { isbold?: boolean }) => {
+  return {
+    display: "block",
+    fontWeight: props.isbold ? 700 : 600,
+    fontSize: "64px",
+  };
+});
+
 export default AnimatedCharacters;

@@ -63,6 +63,20 @@ const InfoPage = () => {
     },
   };
 
+  const fadeIn2 = {
+    hidden: {
+      opacity: 0,
+    },
+    visible: {
+      opacity: 1,
+      transition: {
+        ease: [0.455, 0.03, 0.515, 0.955],
+        duration: 0.75,
+        delay: 0.6,
+      },
+    },
+  };
+
   return (
     <InfoContainer>
       <SubIntroBox>
@@ -104,12 +118,7 @@ const InfoPage = () => {
             </motion.span>
           </Box>
         </Typography>
-        <motion.p
-          variants={fadeIn}
-          initial={"hidden"}
-          whileInView={"visible"}
-          viewport={{ once: false }}
-        >
+        <Typography>
           React, Typescript 기반의 4년차 Front-end 개발자 입니다.
           <br />
           기업의 인사이트 도출을 위한 빅데이터 통합 플랫폼 및 어드민 서비스 개발
@@ -120,9 +129,14 @@ const InfoPage = () => {
           <br />
           지속 가능한 UX라는 공동 가치를 위해 팀과 함께 성장하며 기여하고자
           합니다.
-        </motion.p>
+        </Typography>
       </SubIntroBox>
-      <Box>
+      <motion.div
+        variants={fadeIn2}
+        initial={"hidden"}
+        whileInView={"visible"}
+        viewport={{ once: true }}
+      >
         <InfoTypo>SKILLS.</InfoTypo>
         <AlignCenter mb={2}>
           {devSkills.map((item) => (
@@ -134,8 +148,13 @@ const InfoPage = () => {
             <SkillBadge text={item} key={item} />
           ))}
         </AlignCenter>
-      </Box>
-      <Box>
+      </motion.div>
+      <motion.div
+        variants={fadeIn2}
+        initial={"hidden"}
+        whileInView={"visible"}
+        viewport={{ once: true }}
+      >
         <InfoTypo>EDUCATION.</InfoTypo>
         <Typography sx={styles.eduTypo}>
           단국대학교 응용컴퓨터공학과 학사 졸업 (2021.8)
@@ -143,8 +162,13 @@ const InfoPage = () => {
         <Typography sx={styles.eduTypo}>
           대구원화여자고등학교 졸업 (2017.2)
         </Typography>
-      </Box>
-      <Box>
+      </motion.div>
+      <motion.div
+        variants={fadeIn2}
+        initial={"hidden"}
+        whileInView={"visible"}
+        viewport={{ once: true }}
+      >
         <InfoTypo>CERTIFICATES.</InfoTypo>
         <CertContainer mb={2}>
           <Typography>한국산업인력공단</Typography>
@@ -164,7 +188,7 @@ const InfoPage = () => {
           </Typography>
           <Typography>2024.2</Typography>
         </CertContainer>
-      </Box>
+      </motion.div>
     </InfoContainer>
   );
 };
@@ -182,6 +206,9 @@ const InfoContainer = styled(Box)({
   justifyContent: "center",
   background: "#fff",
   zIndex: 10,
+  "@media (max-width : 1260px)": {
+    padding: "100px 5%",
+  },
 });
 
 const SubIntroBox = styled(Box)({
@@ -210,10 +237,10 @@ const InfoTypo = styled(Typography)({
 });
 
 const AlignCenter = styled(Box)({
-  display: "flex",
-  alignItems: "center",
+  display: "block",
+  // alignItems: "center",
   width: "100%",
-  gap: "10px",
+  // gap: "10px",
 });
 
 const CertContainer = styled(Box)({
@@ -226,6 +253,7 @@ const CertContainer = styled(Box)({
     textAlign: "center",
     fontSize: "20px",
     color: "#939393",
+    minWidth: "165px",
     "& > span": {
       color: "#000",
       fontWeight: 600,

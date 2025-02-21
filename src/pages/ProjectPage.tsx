@@ -31,6 +31,9 @@ const ProjectContainer = styled(Box)({
   background: "#fff",
   zIndex: 10,
   top: "-100px",
+  "@media (max-width : 1260px)": {
+    padding: "100px 5%",
+  },
 });
 
 const WorkTypo = styled(Typography)({
