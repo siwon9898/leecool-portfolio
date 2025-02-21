@@ -88,7 +88,7 @@ const LandingPage = () => {
               <img
                 src={TistoryIcon}
                 alt="linkedin icon"
-                style={{ width: "42px" }}
+                style={{ width: "41px" }}
               />
             </IconButton>
           </LinkBox>
@@ -115,6 +115,9 @@ const LandingContainer = styled(motion.div)({
   position: "relative",
   background: "#FAF7ED",
   display: "flex",
+  "@media (max-width : 840px)": {
+    display: "block",
+  },
 });
 
 const TypoContainer = styled(motion.div)({
@@ -122,6 +125,10 @@ const TypoContainer = styled(motion.div)({
   left: "10%",
   top: "50%",
   transform: "translateY(-50%)",
+  "@media (max-width : 840px)": {
+    top: "60%",
+    transform: "translateY(-60%)",
+  },
   "& h3": {
     fontSize: "64px",
     fontWeight: 500,
@@ -139,6 +146,9 @@ const TypoContainer = styled(motion.div)({
   "& p": {
     color: "#333",
     fontSize: "20px",
+    "@media (max-width : 1200px)": {
+      fontSize: "16px",
+    },
 
     "& > span": {
       color: "#000",
@@ -153,8 +163,18 @@ const ImageContainer = styled(Box)({
   right: "10%",
   top: "45%",
   transform: "translateY(-45%)",
+  "@media (max-width : 840px)": {
+    top: "10%",
+    transform: "translateY(-10%)",
+  },
   "& img": {
     width: "360px",
+    "@media (max-width : 1024px)": {
+      width: "280px",
+    },
+    "@media (max-width : 840px)": {
+      width: "200px",
+    },
   },
 });
 
@@ -168,6 +188,10 @@ const ResumeButton = styled(Button)({
   fontSize: "18px",
   fontWeight: 700,
   marginRight: "20px",
+  "@media (max-width : 1200px)": {
+    fontSize: "14px",
+    padding: "6px 20px 6px 30px",
+  },
   "&:hover": {
     outline: "none",
   },
@@ -181,8 +205,14 @@ const LinkBox = styled(Box)({
   alignItems: "center",
   marginTop: "30px",
   gap: "10px",
+  "@media (max-width : 1200px)": {
+    gap: "4px",
+  },
   "& .MuiIconButton-root > img": {
     width: "36px",
+    "@media (max-width : 1200px)": {
+      width: "28px",
+    },
   },
 });
 
@@ -196,5 +226,16 @@ const BlackCircle = styled(motion.div)({
   top: "45%",
   transform: "translateY(-45%)",
   zIndex: -1,
+  "@media (max-width : 1024px)": {
+    width: "240px",
+    height: "240px",
+  },
+  "@media (max-width : 840px)": {
+    width: "140px",
+    height: "140px",
+    right: "24%",
+    top: "36%",
+    transform: "translateY(-36%)",
+  },
 });
 export default LandingPage;
