@@ -12,22 +12,18 @@ import LinkedInIcon from "../assets/image/ic-linkedin.png";
 import GithubIcon from "../assets/image/ic-github.png";
 import TistoryIcon from "../assets/image/ic-tistory.png";
 import React, { useEffect, useRef, useState } from "react";
-import {
-  motion,
-  useMotionValue,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
 import AnimatedCharacters from "../components/textAnimations/RevealWavyText";
-import { Scrollbar } from "smooth-scrollbar-react";
 
 const LandingPage = () => {
   const containerRef = useRef(null);
-
-  const scrollY = useMotionValue(0);
-
-  const { scrollbar } = useScrollbar;
+  const { scrollYProgress } = useScroll();
+  const borderRadius = useTransform(scrollYProgress, [0, 0.3], [0, 400]);
+  const pageHeight = useTransform(
+    scrollYProgress,
+    [0, 0.1],
+    ["100vh", "calc(100vh - 30px)"]
+  );
 
   const container = {
     visible: {
@@ -52,7 +48,7 @@ const LandingPage = () => {
   return (
     <LandingContainer
       ref={containerRef}
-      style={{ borderRadius: scrollYProgress }}
+      style={{ borderRadius: borderRadius, height: pageHeight }}
     >
       <TypoContainer variants={container}>
         <Box mb={6}>
@@ -115,7 +111,7 @@ const LandingPage = () => {
 
 const LandingContainer = styled(motion.div)({
   width: "100%",
-  minHeight: "calc(100vh - 30px)",
+  // minHeight: "calc(100vh - 30px)",
   position: "relative",
   background: "#FAF7ED",
   display: "flex",

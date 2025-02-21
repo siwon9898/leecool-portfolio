@@ -34,18 +34,18 @@ function App() {
 
   return (
     <>
-      <Scrollbar
+      {/* <Scrollbar
         ref={scrollbarRef}
         plugins={{ overscroll: { effect: OverscrollEffect.GLOW } } as const}
         damping={0.05}
-      >
-        <PageLayout>
-          <LandingPage />
-          <InfoPage />
-          <CareerPage />
-          <ProjectPage />
-        </PageLayout>
-      </Scrollbar>
+      > */}
+      <PageLayout>
+        <LandingPage />
+        <InfoPage />
+        <CareerPage />
+        <ProjectPage />
+      </PageLayout>
+      {/* </Scrollbar> */}
     </>
   );
 }
@@ -55,7 +55,7 @@ const PageLayout = styled(Box)({
   width: "100vw",
   height: "100vh",
   fontFamily: "Pretendard",
-  display: "flex",
+  // display: "flex",
 });
 
 export default App;

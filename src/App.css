@@ -3,11 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Pretendard" !important;
+  scrollbar-width: "thin";
+  scrollbar-color: "#999 #eee";
 }
 
-/* body {
+body {
   overflow-x: hidden;
-} */
+  scroll-behavior: smooth;
+}
 
 /* font  */
 @font-face {
