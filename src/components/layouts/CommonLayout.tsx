@@ -5,7 +5,6 @@ import { Scrollbar } from "smooth-scrollbar-react";
 import type { Scrollbar as BaseScrollbar } from "smooth-scrollbar/scrollbar";
 
 const CommonLayout = () => {
-  const scrollbar = useRef<BaseScrollbar | null>(null);
 
   return (
     <Scrollbar>

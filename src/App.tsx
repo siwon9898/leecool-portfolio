@@ -11,7 +11,6 @@ import { useMotionValue } from "motion/react";
 function App() {
   const scrollbarRef = useRef<BaseScrollbar | null>(null);
   const [scrollY, setScrollY] = useState<number>();
-  const scrollMotion = useMotionValue(0); // ✅ Motion Value 생성
 
   useEffect(() => {
     const scrollbar = scrollbarRef.current;

@@ -60,12 +60,5 @@ const AnimatedCharacters = ({
   );
 };
 
-const AnimateTypo = styled(Typography)((props: { isbold?: boolean }) => {
-  return {
-    display: "block",
-    fontWeight: props.isbold ? 700 : 600,
-    fontSize: "64px",
-  };
-});
 
 export default AnimatedCharacters;
