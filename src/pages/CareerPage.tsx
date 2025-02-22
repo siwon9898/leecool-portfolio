@@ -1,6 +1,5 @@
 import { Box, styled, Typography } from "@mui/material";
 import ZtsLogo from "../assets/image/제타로고.png";
-import React from "react";
 import { motion } from "motion/react";
 
 const CareerPage = () => {

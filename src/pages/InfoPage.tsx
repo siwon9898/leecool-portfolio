@@ -1,5 +1,4 @@
 import { Box, styled, Typography } from "@mui/material";
-import React from "react";
 import { motion } from "framer-motion";
 import SkillBadge from "../components/badge/SkillBadge";
 

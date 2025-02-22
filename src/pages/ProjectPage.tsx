@@ -1,5 +1,4 @@
 import { Box, styled, Typography } from "@mui/material";
-import React from "react";
 
 const ProjectPage = () => {
   return (

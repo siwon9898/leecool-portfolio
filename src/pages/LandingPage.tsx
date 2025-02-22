@@ -1,7 +1,6 @@
 import {
   Box,
   Button,
-  colors,
   IconButton,
   styled,
   Typography,
@@ -11,7 +10,7 @@ import DownloadIcon from "../assets/image/ic-download.png";
 import LinkedInIcon from "../assets/image/ic-linkedin.png";
 import GithubIcon from "../assets/image/ic-github.png";
 import TistoryIcon from "../assets/image/ic-tistory.png";
-import React, { useEffect, useRef, useState } from "react";
+import  {  useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import AnimatedCharacters from "../components/textAnimations/RevealWavyText";
 

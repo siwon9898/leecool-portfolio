@@ -1,5 +1,4 @@
 import { Box, styled } from "@mui/material";
-import React from "react";
 
 const SkillBadge = (props: { text: string; isDev?: boolean }) => {
   return <BadgeBox isdev={props.isDev}>{props.text}</BadgeBox>;
