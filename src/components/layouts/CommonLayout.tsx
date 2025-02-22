@@ -1,8 +1,6 @@
 import { Box, styled } from "@mui/material";
-import  { useRef } from "react";
 import { Outlet } from "react-router-dom";
 import { Scrollbar } from "smooth-scrollbar-react";
-import type { Scrollbar as BaseScrollbar } from "smooth-scrollbar/scrollbar";
 
 const CommonLayout = () => {
 

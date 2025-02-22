@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { styled, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 const AnimatedCharacters = ({
   text,

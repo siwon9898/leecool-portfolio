@@ -6,7 +6,6 @@ import InfoPage from "./pages/InfoPage";
 import type { Scrollbar as BaseScrollbar } from "smooth-scrollbar/scrollbar";
 import CareerPage from "./pages/CareerPage";
 import ProjectPage from "./pages/ProjectPage";
-import { useMotionValue } from "motion/react";
 
 function App() {
   const scrollbarRef = useRef<BaseScrollbar | null>(null);
