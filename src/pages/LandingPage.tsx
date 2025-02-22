@@ -13,7 +13,7 @@ import TistoryIcon from "../assets/image/ic-tistory.png";
 import  {  useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import AnimatedCharacters from "../components/textAnimations/RevealWavyText";
-
+import resume from '../assets/document/resume.pdf'
 const LandingPage = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll();
@@ -44,6 +44,20 @@ const LandingPage = () => {
     },
   };
 
+  const downloadPDF = () => {
+    const link = document.createElement('a');
+    link.href = resume;
+    link.download = '이시원_이력서.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const linkToUrl = (link : string) => {
+    window.open(link, '_blank')
+  }
+ 
+
   return (
     <LandingContainer
       ref={containerRef}
@@ -73,17 +87,17 @@ const LandingPage = () => {
             Seoul, South Korea
           </Typography>
           <LinkBox>
-            <ResumeButton>
+            <ResumeButton onClick={downloadPDF}>
               Resume
               <img src={DownloadIcon} alt="download icon" />
             </ResumeButton>
-            <IconButton>
+            <IconButton onClick={() => linkToUrl('https://www.linkedin.com/in/%EC%8B%9C%EC%9B%90-%EC%9D%B4-20b59b1b5/')}>
               <img src={LinkedInIcon} alt="linkedin icon" />
             </IconButton>
-            <IconButton>
+            <IconButton onClick={() => linkToUrl('https://github.com/siwon9898')}>
               <img src={GithubIcon} alt="linkedin icon" />
             </IconButton>
-            <IconButton sx={{ transform: "translateX(-1px)" }}>
+            <IconButton sx={{ transform: "translateX(-1px)" }} onClick={() => linkToUrl('https://leecool-develops.tistory.com/')}>
               <img
                 src={TistoryIcon}
                 alt="linkedin icon"
