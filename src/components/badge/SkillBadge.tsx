@@ -20,6 +20,10 @@ const BadgeBox = styled(Box)((props: { isdev?: boolean }) => {
     "@media (max-width : 1080px)": {
       fontSize: "16px",
     },
+    "@media (max-width : 440px)": {
+      padding: "9px 20px",
+      fontSize: "12px",
+    },
   };
 });
 

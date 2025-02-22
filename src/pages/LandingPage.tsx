@@ -125,6 +125,7 @@ const TypoContainer = styled(motion.div)({
   left: "10%",
   top: "50%",
   transform: "translateY(-50%)",
+  color : '#000',
   "@media (max-width : 840px)": {
     top: "60%",
     transform: "translateY(-60%)",
@@ -139,6 +140,7 @@ const TypoContainer = styled(motion.div)({
   "& h1": {
     fontSize: "64px",
     fontWeight: 700,
+    color:'#333',
     "@media (max-width : 1200px)": {
       fontSize: "24px",
     },

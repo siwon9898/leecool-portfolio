@@ -156,12 +156,12 @@ const InfoPage = () => {
         viewport={{ once: true }}
       >
         <InfoTypo>EDUCATION.</InfoTypo>
-        <Typography sx={styles.eduTypo}>
+        <EduTypo>
           단국대학교 응용컴퓨터공학과 학사 졸업 (2021.8)
-        </Typography>
-        <Typography sx={styles.eduTypo}>
+        </EduTypo>
+        <EduTypo>
           대구원화여자고등학교 졸업 (2017.2)
-        </Typography>
+        </EduTypo>
       </motion.div>
       <motion.div
         variants={fadeIn2}
@@ -215,7 +215,9 @@ const SubIntroBox = styled(Box)({
   textAlign: "center",
   width: "100%",
   padding: "120px 0 240px 0",
-
+  "@media (max-width : 440px)" : {
+    paddingBottom : '120px'
+   },
   "& > h2": {
     fontWeight: 600,
     marginBottom: "20px",
@@ -227,6 +229,11 @@ const SubIntroBox = styled(Box)({
   "& > p": {
     fontSize: "20px",
     color: "#555",
+    "@media (max-width : 1080px)" : {
+    fontSize : '18px'
+   } ,"@media (max-width : 440px)" : {
+    fontSize : '12px'
+   }
   },
 });
 
@@ -234,6 +241,13 @@ const InfoTypo = styled(Typography)({
   fontSize: "64px",
   fontWeight: "700",
   marginBottom: "20px",
+  color : '#000',
+   "@media (max-width : 1080px)" : {
+    fontSize : '48px'
+   },
+   "@media (max-width : 440px)" : {
+    fontSize : '36px'
+   }
 });
 
 const AlignCenter = styled(Box)({
@@ -244,38 +258,66 @@ const AlignCenter = styled(Box)({
 });
 
 const CertContainer = styled(Box)({
-  display: "flex",
-  alignItems: "center",
-  padding: "0 40px",
+  // display: "flex",
+  // alignItems: "center",
+  // padding: "0 40px",
+  display : 'block',
+  "@media (max-width : 440px)" : {
+    padding : '0px',
+  
+   },
   "& > p": {
+    display : 'inline-block',
     width: "20%",
     borderRight: "2px solid #E6E6E6",
     textAlign: "center",
     fontSize: "20px",
     color: "#939393",
+    padding : '0 20px',
+    whiteSpace: 'nowrap',
     minWidth: "165px",
+    "@media (max-width : 1080px)" : {
+      fontSize : '16px'
+     },
+     "@media (max-width : 440px)" : {
+      fontSize : '12px',
+    
+     },
     "& > span": {
       color: "#000",
       fontWeight: 600,
     },
-    "&:first-of-type": {
-      textAlign: "left",
-    },
+    // "&:first-of-type": {
+    //   textAlign: "left",
+    // },
     "&:last-of-type": {
       border: "none",
     },
   },
 });
 
+const EduTypo = styled(Typography)({
+    fontSize: "22px",
+    color :'#333',
+    "@media (max-width : 1080px)" : {
+      fontSize : '18px'
+     },
+     "@media (max-width : 440px)" : {
+      fontSize : '14px'
+     }
+})
+
 const styles = {
   eduTypo: {
     fontSize: "22px",
+    color :'#333'
   },
   animateTypo: {
     overflow: "hidden",
     display: "inline-block",
     verticalAlign: "middle",
     marginRight: "14px",
+    color : '#000'
   },
 };
 export default InfoPage;

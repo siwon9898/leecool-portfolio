@@ -39,6 +39,13 @@ const ProjectContainer = styled(Box)({
 const WorkTypo = styled(Typography)({
   fontSize: "64px",
   fontWeight: "700",
+  color :'#000',
+  "@media (max-width : 1080px)" : {
+    fontSize : '48px'
+   },
+   "@media (max-width : 440px)" : {
+    fontSize : '36px'
+   }
 });
 
 const ProjectBox = styled(Box)({

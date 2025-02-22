@@ -19,6 +19,7 @@ const CareerPage = () => {
   };
 
   return (
+    <Box sx={{background :'#fff'}}>
     <CareerContainer>
       <Box>
         <Typo>CAREER.</Typo>
@@ -42,6 +43,7 @@ const CareerPage = () => {
         </CareerBox>
       </Box>
     </CareerContainer>
+    </Box>
   );
 };
 const CareerContainer = styled(Box)({
@@ -63,6 +65,10 @@ const CareerContainer = styled(Box)({
     display: "flex",
     // alignItems: "center",
     gap: "40px",
+    color : '#333',
+    "@media (max-width : 820px)": {
+      display : 'block',
+    }
   },
 });
 
@@ -71,6 +77,13 @@ const Typo = styled(Typography)({
   fontWeight: "700",
   marginBottom: "20px",
   position: "relative",
+  color : '#000',
+  "@media (max-width : 1080px)" : {
+    fontSize : '48px'
+   },
+   "@media (max-width : 440px)" : {
+    fontSize : '36px'
+   }
 });
 
 const CareerBox = styled(motion.div)({
@@ -81,16 +94,29 @@ const CareerBox = styled(motion.div)({
   padding: "60px 80px",
   borderRadius: "0 100px 100px 100px",
   zIndex: 1,
+  "@media (max-width : 820px)": {
+    padding: "30px 50px",
+    width : '100%'
+  },
   "& img": {
     width: "150px",
+    "@media (max-width : 820px)": {
+      width: "100px",
+    },
   },
   "& h3": {
     fontSize: "20px",
     marginBottom: "10px",
     fontWeight: 600,
+    "@media (max-width : 820px)": {
+      fontSize: "16px",
+    },
   },
   "& p": {
     fontSize: "18px",
+    "@media (max-width : 820px)": {
+      fontSize: "12px",
+    },
   },
 });
 
